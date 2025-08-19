@@ -2,6 +2,7 @@
   "name": "recolecta_mas",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,8 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.1",
     "exceljs": "^4.4.0",
     "express": "^5.1.0",
+    "mysql": "^2.18.1",
     "mysql2": "^3.14.3",
     "pdfkit": "^0.17.1"
   }

@@ -1,6 +1,6 @@
 // importamos el modulo para los reportes con el usuariomodel para traer la data
 import ExcelJS from "exceljs";
-import { UsuarioModel } from "../models/usuario.model.js";
+import { UsuarioModel } from '../models/usuario.model.js';
 
 export const ReporteController = {
     async usuariosExcel(req, res) {

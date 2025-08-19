@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Lado izquierdo con imagen */
+.left-side {
+    flex: 1;
+    position: relative;
+    background-image: url('./IMG/img2.jpg');
+    background-size: cover;
+    /* background-position: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.brand {
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.message {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Lado derecho con formulario */
+.right-side {
+    flex: 0 0 500px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 360px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 0.5rem;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2d5a3d;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: #fff;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #2d5a3d;
+    box-shadow: 0 0 0 3px rgba(45, 90, 61, 0.1);
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+.login-btn {
+    width: 100%;
+    background: #2d5a3d;
+    color: white;
+    border: none;
+    padding: 0.875rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 1.5rem;
+}
+
+.login-btn:hover {
+    background: #1e3d29;
+}
+
+.login-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.divider {
+    text-align: center;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #eee;
+}
+
+.divider span {
+    background: white;
+    padding: 0 1rem;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.google-btn {
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 0.875rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s, border-color 0.2s;
+    margin-bottom: 1.5rem;
+}
+
+.google-btn:hover {
+    background: #f8f8f8;
+    border-color: #bbb;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.link {
+    color: #2d5a3d;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: #1e3d29;
+}
+
+/* Mensajes */
+.message-container {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.message-container.error {
+    background: #fee;
+    color: #c33;
+    border: 1px solid #fcc;
+}
+
+.message-container.success {
+    background: #efe;
+    color: #363;
+    border: 1px solid #cfc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .left-side {
+        flex: 0 0 200px;
+    }
+    
+    .right-side {
+        flex: 1;
+        padding: 1rem;
+    }
+    
+    .brand {
+        font-size: 2.5rem;
+    }
+    
+    .message {
+        font-size: 1rem;
+    }
+}
