@@ -15,5 +15,8 @@ app.use("/api/usuarios", usuarioRoutes);
 // configuramos las rutas para los reportes
 app.use("/api/reportes", reporteRoutes);
 
+const recoleccionRoutes = require('./routes/recoleccionRoutes');
+app.use('/api/recolecciones', recoleccionRoutes);
+
 // exportamos como modulo la app
 export default app;

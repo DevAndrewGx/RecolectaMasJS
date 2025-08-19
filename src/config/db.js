@@ -14,4 +14,15 @@ const pool = mysql.createPool({
   queueLimit: 0,
 });
 
-export default pool;
+module.exports = pool;
+
+conexion.getConnection((err, connection) => {
+  if (err) {
+      console.error('Error al obtener la conexión del pool:', err);
+      return;
+  }
+  
+  console.log('Conexión obtenida del pool:', connection.threadId);
+  connection.release();
+  console.log('Conexión liberada:', connection.threadId);
+});
