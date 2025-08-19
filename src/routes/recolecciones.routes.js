@@ -8,7 +8,7 @@ const {
   getRecoleccionById,
   updateRecoleccion,
   updateEstadoRecoleccion
-} = require('../controllers/recoleccionController');
+} = require('../controllers/recolecciones.controller');
 
 router.post('/', addRecoleccion);
 

@@ -29,7 +29,7 @@ class Server {
   }
 
   routes() {
-    this.app.use(this.paths.recolecciones, require("../routes/recoleccionRoutes"));
+    this.app.use(this.paths.recolecciones, require("../routes/recolecciones.routes"));
   }
 
   listen() {

@@ -1,4 +1,4 @@
-const conexion = require('../../db/conexion');
+const conexion = require('../db/conexion');
 const response = require('express');
 
 // Agregar una nueva solicitud de recolección
