@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const path = require('path');
+const reporteRouter = require("../routes/reporte.routes");
 
 class Server {
   constructor() {
@@ -9,8 +11,13 @@ class Server {
 
     // Paths
     this.paths = {
-      recolecciones: "/api/recolecciones"
+      recolecciones: "/api/recolecciones",
+      reportes: "/reportes"
     };
+
+    // Configuración de vistas con el motor de plantillas ejs
+    this.app.set("view engine", "ejs");
+    this.app.set("views", path.join(__dirname, "../views"));
 
     // Inicializar middlewares y rutas
     this.middlewares();
@@ -26,10 +33,13 @@ class Server {
 
     this.app.use(cookieParser());
     this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: true }));
+    this.app.use(express.static(path.join(__dirname, "public"))); // css/js/img
   }
-
+  
   routes() {
-    this.app.use(this.paths.recolecciones, require("../routes/recolecciones.routes"));
+    // this.app.use(this.paths.recolecciones, require("../routes/recolecciones.routes"));
+    this.app.use('/reportes', reporteRouter);
   }
 
   listen() {

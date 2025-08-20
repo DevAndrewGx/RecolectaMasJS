@@ -1,13 +1,10 @@
-// importamos router y el controlador
-import { Router } from "express";
-import { ReporteController } from "../controllers/reporte.controller.js";
+const router = require("express").Router();
+const { getReportes, renderReportes } = require("../controllers/reporte.controller");
 
-//creamos una instancia de router para utilizar
-const router = Router();
+// Renderiza la vista
+router.get("/", renderReportes);
 
+// Genera y descarga el reporte en Excel
+router.get("/descargar", getReportes);
 
-// definimos la ruta para obtener el reporte de usuarios
-router.get("/usuarios/excel", ReporteController.usuariosExcel);
-
-// exportamos el router como modulo
-export default router;
+module.exports = router;
