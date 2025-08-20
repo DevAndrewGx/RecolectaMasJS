@@ -1,6 +1,7 @@
-// importamos los modulos que vamos a utliziar 
-import mysql from "mysql2/promise";
-import dotenv from "dotenv";
+const mysql = require('mysql');
+const dotenv = require("dotenv");
+const conexion = require('../db/conexion');
+
 
 dotenv.config();
 
@@ -14,7 +15,7 @@ const pool = mysql.createPool({
   queueLimit: 0,
 });
 
-module.exports = pool;
+module.exports = conexion;
 
 conexion.getConnection((err, connection) => {
   if (err) {

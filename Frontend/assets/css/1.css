@@ -1,0 +1,307 @@
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Lado izquierdo con imagen */
+.left-side {
+    flex: 1;
+    position: relative;
+    /* Imagen de fondo con árboles verdes como en la imagen */
+    background-image: url('/img/img3.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.word {
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.word:nth-child(1) {
+    color: #FFD700; /* Dorado para "Reinventa" */
+}
+
+.word:nth-child(2) {
+    color: #FFA500; /* Naranja para "Reusa" */
+}
+
+.word:nth-child(3) {
+    color: #FFFFFF; /* Blanco para "RECICLA+" */
+    font-size: 4.5rem;
+    letter-spacing: 2px;
+}
+
+/* Lado derecho con formulario */
+.right-side {
+    flex: 0 0 500px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow-y: auto; /* Permitir scroll si es necesario */
+}
+
+.register-form {
+    width: 100%;
+    max-width: 360px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom: 2%; */
+    gap: 0.5rem;
+}
+
+.logo {
+    width: auto;
+    height: auto;
+    display: flex;           /* Activa flexbox */
+    align-items: center;     /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    overflow: hidden;        /* Recorta lo que sobresalga */
+    border-radius: 50%;      /* Opcional: si quieres un círculo */
+}
+.logo img {
+    max-width: 100%;         /* Ajusta el ancho al contenedor */
+    max-height: 100%;        /* Ajusta la altura al contenedor */
+    object-fit: cover;       /* Cubre todo el espacio (recorta excesos) */
+    /* object-fit: contain;  Opción 2: Escala la imagen sin recortar */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Estilos de los campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: #fff;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2d5a3d;
+    box-shadow: 0 0 0 3px rgba(45, 90, 61, 0.1);
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+/* Botón de registro */
+.register-btn {
+    width: 100%;
+    background: #2d5a3d;
+    color: white;
+    border: none;
+    padding: 0.875rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 1.5rem;
+}
+
+.register-btn:hover {
+    background: #1e3d29;
+}
+
+.register-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Divisor */
+.divider {
+    text-align: center;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #eee;
+}
+
+.divider span {
+    background: white;
+    padding: 0 1rem;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* Botón de Google */
+.google-btn {
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 0.875rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s, border-color 0.2s;
+    margin-bottom: 1.5rem;
+}
+
+.google-btn:hover {
+    background: #f8f8f8;
+    border-color: #bbb;
+}
+
+/* Texto legal */
+.footer-text {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+/* Link para login */
+.login-link {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.link {
+    color: #2d5a3d;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: #1e3d29;
+}
+
+/* Mensajes de error/éxito */
+.message-container {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.message-container.error {
+    background: #fee;
+    color: #c33;
+    border: 1px solid #fcc;
+}
+
+.message-container.success {
+    background: #efe;
+    color: #363;
+    border: 1px solid #cfc;
+}
+/* Estilos para los mensajes de éxito/error - Agregar a 1.css */
+
+.message-container {
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.message-container.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message-container.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Estilo para el botón deshabilitado */
+.register-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .left-side {
+        flex: 0 0 200px;
+    }
+    
+    .brand-message {
+        font-size: 2.5rem;
+    }
+    
+    .word:nth-child(3) {
+        font-size: 3rem;
+    }
+    
+    .right-side {
+        flex: 1;
+        padding: 1rem;
+    }
+}

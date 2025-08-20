@@ -9,7 +9,8 @@ class Server {
 
     // Paths
     this.paths = {
-      recolecciones: "/api/recolecciones"
+      recolecciones: "/api/recolecciones",
+      auth: "/api/auth"
     };
 
     // Inicializar middlewares y rutas
@@ -30,7 +31,7 @@ class Server {
 
   routes() {
     this.app.use(this.paths.recolecciones, require("../routes/recolecciones.routes"));
-  }
+    this.app.use(this.paths.auth, require("../routes/auth.routes"));  }
 
   listen() {
     this.app.listen(this.port, () => {

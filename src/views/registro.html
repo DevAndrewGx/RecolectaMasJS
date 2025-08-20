@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECOLECTA+ - Crear Cuenta</title>
+    <link rel="stylesheet" href="/css/1.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Lado izquierdo con imagen y mensaje -->
+        <div class="left-side">
+            <div class="background-overlay"></div>
+            
+        </div>
+
+        <!-- Lado derecho con formulario de registro -->
+        <div class="right-side">
+            <div class="register-form">
+                <!-- Logo y título -->
+                <div class="logo-container">
+                    <div class="logo">
+                        <img src="/img/logo-letra.png" alt="Logo de la empresa" width="300" height="300">
+                    </div>
+                </div>
+
+                <h2>Crea una cuenta</h2>
+                <p class="subtitle">Ingresa la siguiente información para registrarte</p>
+
+                <!-- Formulario de registro -->
+                <form id="registerForm">
+                    <!-- Campo Nombre -->
+                    <div class="form-group">
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                    </div>
+
+                    <!-- Campo Apellido -->
+                    <div class="form-group">
+                        <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+                    </div>
+                     <!-- Campo Documento -->
+                    <div class="form-group">
+                        <input type="text" id="documento" name="documento" placeholder="Documento" required>
+                    </div>
+
+                    <!-- Campo correo -->
+                    <div class="form-group">
+                        <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+                    </div>
+
+                    <!-- Campo Telefono -->
+                    <div class="form-group">
+                        <input type="tel" id="telefono" name="telefono" placeholder="Celular" required>
+                    </div>
+
+                    <!-- Campo Dirección -->
+                    <div class="form-group">
+                        <input type="text" id="direccion" name="direccion" placeholder="Dirección" required>
+                    </div>
+
+                    <!-- Campo Contraseña -->
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    </div>
+
+                    <input type="hidden" id="rol" name="rol" value="usuario">
+                    <input type="hidden" id="estado" name="estado" value="Activo">
+
+                    <!-- Botón Continuar -->
+                    <button type="submit" class="register-btn">Continuar</button>
+
+                    <br>
+                    
+                </form>
+
+                <!-- Texto legal -->
+                <div class="footer-text">
+                    Al hacer clic en Continuar, aceptas nuestros <br>
+                    <a href="#" class="link">Términos de servicio</a> y la <a href="#" class="link">Política de privacidad</a>
+                </div>
+
+                <!-- Ya tienes cuenta -->
+                <div class="login-link">
+                    ¿Ya tienes cuenta? <a href="/" class="link">Iniciar sesión</a>
+                </div>
+
+                <!-- Mensajes de error/éxito -->
+                <div id="message" class="message-container" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/registro-script.js"></script>
+</body>
+</html>
